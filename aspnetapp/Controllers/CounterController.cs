@@ -51,6 +51,14 @@ namespace aspnetapp.Controllers
             //return new CounterResponse { data = counter.count };
         }
 
+        [HttpGet("name")]
+        public async Task<ActionResult<CounterResponse>> GetCounterName()
+        {
+            return new CounterResponse { data = 1 };
+            //var counter =  await getCounterWithInit();
+            //return new CounterResponse { data = counter.count };
+        }
+
         // POST: api/Counter
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
