@@ -46,6 +46,7 @@ namespace aspnetapp.Controllers
         [HttpGet]
         public async Task<ActionResult<CounterResponse>> GetCounter()
         {
+            var counter = await getCounterWithInit();
             return new CounterResponse { data = 333 };
             //var counter =  await getCounterWithInit();
             //return new CounterResponse { data = counter.count };
@@ -54,6 +55,7 @@ namespace aspnetapp.Controllers
         [HttpGet("name")]
         public async Task<ActionResult<CounterResponse>> GetCounterName()
         {
+            var counter = await getCounterWithInit();
             return new CounterResponse { data = 1 };
             //var counter =  await getCounterWithInit();
             //return new CounterResponse { data = counter.count };

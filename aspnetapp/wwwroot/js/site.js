@@ -12,6 +12,15 @@ function init() {
     }
   });
 }
+function getName() {
+    $.ajax("/api/count/name", {
+        method: "get",
+    }).done(function (res) {
+        if (res && res.data !== undefined) {
+            $(".count-number").html(res.data);
+        }
+    });
+}
 function set(action) {
   $.ajax("/api/count", {
     method: "POST",
